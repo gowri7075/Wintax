@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<title>Win Tax Filer</title>
+<link rel="icon" href="/images/WinTax.png" type="image/icon type">
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link
+	href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap"
+	rel="stylesheet">
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="css/animate.css">
+
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/owl.theme.default.min.css">
+<link rel="stylesheet" href="css/magnific-popup.css">
+
+<link rel="stylesheet" href="css/flaticon.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/perfect-scrollbar.css">
+<link rel="stylesheet" type="text/css" href="css/util.css">
+<link rel="stylesheet" type="text/css" href="css/css/main.css">
+</head>
+<body>
+
+	<div class="wrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="bg-wrap">
+						<div class="row">
+							<div class="col-md-9 d-flex align-items-center">
+								<p class="mb-0 phone pl-md-2">
+									<span class="fa fa-phone mr-1"></span><b><a
+										href="tel://+1 346-347-7890">+1 346-347-7890</a></b> &nbsp;&nbsp;&nbsp;<span
+										class="fa fa-paper-plane mr-1"></span> <b><a
+										href="mailto:Info@wintaxconsultant.com">Info@wintaxconsultant.com</a></b>
+								</p>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<div class="social-media">
+									<p class="mb-0 d-flex">
+										<a href="https://www.facebook.com/"
+											class="d-flex align-items-center justify-content-center"><span
+											class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+										<a href="#"
+											class="d-flex align-items-center justify-content-center"><span
+											class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a> <a
+											href="#"
+											class="d-flex align-items-center justify-content-center"><span
+											class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+										<a href="#"
+											class="d-flex align-items-center justify-content-center"><span
+											class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+									</p>
+								</div>
+							</div>
+							<div class="col-md-3 d-flex justify-content-md-end">
+								<a th:href="@{/login}" class="btn btn-white"
+									style="height: 35px">Login</a>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+									th:href="@{/register}" class="btn btn-white"
+									style="height: 35px">Register</a>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<nav
+		class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
+		id="ftco-navbar">
+		<div class="container">
+			<img src="/images/wtf_final.png" alt="WinTax" width="200" height="80"
+				th:href="@{/home}">
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#ftco-nav" aria-controls="ftco-nav"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="fa fa-bars"></span> Menu
+			</button>
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav m-auto">
+					<li class="nav-item active"><a th:href="@{/index}"
+						class="nav-link">Home</a></li>
+					<li class="nav-item"><a href="#about-section" class="nav-link">About
+							Us</a></li>
+					<li class="nav-item"><a href="#services-section"
+						class="nav-link">Services</a></li>
+					<li class="nav-item"><a href="#price-section" class="nav-link">Pricing</a></li>
+					<li class="nav-item"><a th:href="@{/contact}" class="nav-link">Contact</a></li>
+					<li class="nav-item"><a th:href="@{/refer}" class="nav-link">Refer
+							A Friend</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- END nav -->
+	<div class="hero-wrap">
+		<div class="home-slider owl-carousel">
+			<div class="slider-item"
+				style="background-image: url(images/bg_1.jpg);">
+				<div class="overlay"></div>
+				<div class="container">
+					<div
+						class="row no-gutters slider-text align-items-center justify-content-center">
+						<div class="col-md-8 ftco-animate">
+							<div class="text w-100 text-center">
+								<h2>Enjoy our free services</h2>
+								<h1 class="mb-4">We Help You to save</h1>
+								<p>
+									<a th:href="@{/contact}" class="btn btn-white">Connect with
+										us</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="slider-item"
+				style="background-image: url(images/bg_2.jpg);">
+				<div class="overlay"></div>
+				<div class="container">
+					<div
+						class="row no-gutters slider-text align-items-center justify-content-center">
+						<div class="col-md-8 ftco-animate">
+							<div class="text w-100 text-center">
+								<h2>Tax Planning</h2>
+								<h1 class="mb-4">Reducing your Tax</h1>
+								<p>
+									<a th:href="@{/contact}" class="btn btn-white">Connect with
+										us</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="slider-item"
+				style="background-image: url(images/bg_3.jpg);">
+				<div class="overlay"></div>
+				<div class="container">
+					<div
+						class="row no-gutters slider-text align-items-center justify-content-center">
+						<div class="col-md-8 ftco-animate">
+							<div class="text w-100 text-center">
+								<h2>We Give Advice</h2>
+								<h1 class="mb-4">Expert Financial Advice</h1>
+								<p>
+									<a th:href="@{/contact}" class="btn btn-white">Connect with
+										us</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<section class="ftco-section ftco-no-pt bg-light" id="about-section">
+		<div class="container">
+			<div class="row d-flex no-gutters">
+				<div class="col-md-6 d-flex">
+					<div
+						class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-center mb-4 mb-sm-0"
+						style="background-image: url(images/about.jpg);"></div>
+				</div>
+				<div class="col-md-6 pl-md-5 py-md-5">
+					<div class="heading-section pl-md-4 pt-md-5">
+						<span class="subheading">About Us</span>
+						<h2 class="mb-4">We Are the best US Tax Consultant</h2>
+						<p>
+							<b>Win Tax Consultant</b> is a team of dedicated and experienced
+							professionals committed to delivering quality service to our
+							esteemed clients. Our professional team has successfully assisted
+							our clients in realizing the outsourcing benefit and delivering
+							sustainable competitive advantage a head.
+						</p>
+						<p>With our certified training and expansive financial
+							knowledge, we are equipped to handle all of your accounting
+							needs, no matter how complex. Whether you require assistance at
+							the corporate or personal level, we are ready to serve as your
+							tax planners, accounting, and financing advisor.</p>
+						<p>Our tax preparation and tax processing service methodology
+							provide CPAs and Tax service providers of almost any size with a
+							great new way of handling their tax compliance workload and
+							meeting filing deadlines.</p>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-section bg-light ftco-no-pt" id="services-section"
+		style="padding-bottom: 20px;">
+		<div class="container">
+			<h3 class="heading">
+				<b>Services</b>
+			</h3>
+		</div>
+	</section>
+	<section class="ftco-section bg-light ftco-no-pt">
+		<div class="container">
+			<!-- <div class="row"> -->
+
+			<div class="media-body">
+				<h3 class="heading">Free Estimation and Consultation</h3>
+				<p>When you choose Win Tax Consultant to prepare the estimation copy.
+					Our team will help you to do minimize your tax rate with highly
+					qualified and experienced Tax experts.</p>
+			</div>
+
+
+			<div class="media-body">
+				<h3 class="heading">Amendment Filing</h3>
+				<p>An amendment tax return can be used to correct errors and
+					claim a more advantageous tax filing. For example, one might choose
+					to file an amended return in instances of misreported earnings or
+					tax credits. Change in filing status, change in the number of
+					claimed dependents, incorrectly claimed tax credits and deductions,
+					incorrectly reported income, are reasons individuals file an
+					amended return. The drawback of filing an amended return is that
+					the document has to be mailed to the IRS Service Center that
+					processed the original tax form and can take up to 16 weeks to be
+					processed.</p>
+			</div>
+
+			<div class="media-body">
+				<h3 class="heading">ITIN Guidance</h3>
+				<p>An Individual Taxpayer Identification Number (ITIN) is a tax
+					processing number issued by the Internal Revenue Service. The IRS
+					issues ITINs to individuals who are required to have a U.S.
+					taxpayer identification number but who do not have, and are not
+					eligible to obtain, a Social Security number (SSN) from the Social
+					Security Administration (SSA) We understand your situation so that
+					we can help you to fill the ITIN application form W7 by Certified
+					Acceptance Agent (CAA), and need to attach to your tax return and
+					submitted to the IRS.</p>
+			</div>
+
+			<div class="media-body">
+				<h3 class="heading">FBAR &amp; FATCA Processing</h3>
+				<p><b>Foreign Bank Account Reporting (FBAR)</b> form 114, if tax
+					payer hold more than $10,000 in foreign bank accounts at any time
+					during the financial year. FBAR must be filed with the Financial
+					Crimes Enforcement Network (FinCEN), which is a bureau of the
+					Treasury Department. Contact Win Tax Consultant will help you to report
+					FBAR (Foreign Bank Account Reporting) we have experienced tax
+					experts. Our team is ready to help you. </p>
+					<p><b>Foreign Account Tax Compliance Act (FATCA)</b> The law addresses tax non-compliance by
+					U.S. taxpayers with foreign accounts by focusing on reporting by
+					U.S. taxpayers and foreign financial institutions. In general,
+					federal law requires U.S. citizens and resident aliens to report
+					any worldwide income, including income from foreign trusts and
+					foreign bank and securities accounts.</p>
+			</div>
+			<div class="media-body">
+				<h3 class="heading">Extension Filing</h3>
+				<p>If you are not ready to file the taxes by due date. Then you
+					need to file an extension on your return. Which is usually April
+					15, to push your deadline we can take extension with IRS for more
+					six months.</p>
+			</div>
+
+
+			<div class="media-body">
+				<h3 class="heading">Tax representation with IRS</h3>
+				<p>If you have a tax problem, a notice from the IRS, or are
+					under audit, you may want a tax expert to represent you before the
+					IRS. Win Tax Consultant will be providing Free tax representation
+					services for Individual or Business Entity who receives any audit
+					notice from the IRS with regards to the previously filed tax
+					returns.</p>
+			</div>
+
+		</div>
+	</section>
+
+
+
+
+	<section class="ftco-section bg-light" id="price-section" style="padding-bottom: 0px; padding-top: 0px;">
+		<!-- <div class="container"> -->
+			<div class="row justify-content-center">
+				<div class="col-md-7 heading-section text-center ftco-animate">
+					<span class="subheading">Price &amp; Plans</span>
+					<h2>Affordable Packages</h2>
+				</div>
+			<div class="limiter">
+			<div class="container-table100">
+				<div class="wrap-table100" style="width: 1300px">
+					<div class="table100 ver1 m-b-110">
+						<div class="table100-head">
+							<table>
+								<thead>
+									<tr class="row100 head">
+										<th class="cell100 column1">#</th>
+										<th class="cell100 contactColumn2">Particulars</th>
+										<th class="cell100 contactColumn3">Federal</th>
+										<th class="cell100 contactColumn3">Each State</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+						<div class="table100-body js-pscroll" style="max-height: none">
+							<table>
+								<tbody  id="myTable">
+									<tr class="row100 body">
+										<td class="cell100 column1">1</td>
+										<td class="cell100 contactColumn2">Federal – Standard Tax Return (Form 1040)</td>
+										<td class="cell100 contactColumn3">$20</td>
+										<td class="cell100 contactColumn3">$30</td>
+									</tr>
+									<tr class="row100 body">
+										<td class="cell100 column1">2</td>
+										<td class="cell100 contactColumn2">Federal – Itemized (Customized) Tax Return (Schedule A)</td>
+										<td class="cell100 contactColumn3">$100</td>
+										<td class="cell100 contactColumn3">$30</td>
+									</tr>
+									<tr class="row100 body">
+										<td class="cell100 column1">3</td>
+										<td class="cell100 contactColumn2">Federal – Planning (For 1040) If Eligible</td>
+										<td class="cell100 contactColumn3">$80</td>
+										<td class="cell100 contactColumn3">$30</td>
+									</tr>
+									<tr class="row100 body">
+										<td class="cell100 column1">4</td>
+										<td class="cell100 contactColumn2">Federal ITIN (Guidance &amp; Paper Filing)</td>
+										<td class="cell100 contactColumn3">$100</td>
+										<td class="cell100 contactColumn3">$30</td>
+									</tr>
+									<tr class="row100 body">
+										<td class="cell100 column1">5</td>
+										<td class="cell100 contactColumn2">Federal ITIN (Spouse Election &amp; Paper Filing)</td>
+										<td class="cell100 contactColumn3">$110</td>
+										<td class="cell100 contactColumn3">$30</td>
+									</tr>
+									<tr class="row100 body">
+										<td class="cell100 column1">6</td>
+										<td class="cell100 contactColumn2">Federal – Schedule C, E &amp; 1099 Misc</td>
+										<td class="cell100 contactColumn3">$100</td>
+										<td class="cell100 contactColumn3">$30</td>
+									</tr>
+									<tr class="row100 body">
+										<td class="cell100 column1">7</td>
+										<td class="cell100 contactColumn2">Federal – Non Resident Tax Return (Us India Tax Treaty)</td>
+										<td class="cell100 contactColumn3">$80</td>
+										<td class="cell100 contactColumn3">$30</td>
+									</tr>
+									<tr class="row100 body">
+										<td class="cell100 column1">8</td>
+										<td class="cell100 contactColumn2">City Tax Returns</td>
+										<td class="cell100 contactColumn3">$10</td>
+										<td class="cell100 contactColumn3">-</td>
+									</tr>
+									<tr class="row100 body">
+										<td class="cell100 column1">9</td>
+										<td class="cell100 contactColumn2">For Each Additional State</td>
+										<td class="cell100 contactColumn3">-</td>
+										<td class="cell100 contactColumn3">$25</td>
+									</tr>
+									<tr class="row100 body">
+										<td class="cell100 column1">10</td>
+										<td class="cell100 contactColumn2">FBAR &amp; FATCA</td>
+										<td class="cell100 contactColumn3"></td>
+										<td class="cell100 contactColumn3">$10</td>
+									</tr>
+									<tr class="row100 body">
+										<td class="cell100 column1">11</td>
+										<td class="cell100 contactColumn2">Form 1116</td>
+										<td class="cell100 contactColumn3">-</td>
+										<td class="cell100 contactColumn3">$20</td>
+									</tr>
+									<tr class="row100 body">
+										<td class="cell100 column1">12</td>
+										<td class="cell100 contactColumn2">FICA Taxes If Eligible</td>
+										<td class="cell100 contactColumn3">No Cost</td>
+										<td class="cell100 contactColumn3">-</td>
+									</tr>
+									<tr class="row100 body">
+										<td class="cell100 column1">13</td>
+										<td class="cell100 contactColumn2">Extension Filing</td>
+										<td class="cell100 contactColumn3">No Cost</td>
+										<td class="cell100 contactColumn3">-</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</section>
+
+	<footer class="footer">
+		<div class="container-fluid px-lg-5">
+			<div class="row">
+				<div class="col-md-9 py-5">
+					<div class="row">
+						<div class="col-lg-6 col-md-8 d-flex align-items-stretch">
+								<div class="info-wrap bg-primary w-100 p-md-5 p-4">
+									<h3>Let's get in touch</h3>
+									<p class="mb-4">We're open for any suggestion or just to
+										have a chat</p>
+									<div class="dbox w-100 d-flex align-items-start">
+										<div
+											class="icon d-flex align-items-center justify-content-center">
+											<span class="fa fa-map-marker"></span>
+										</div>
+										<div class="text pl-3">
+											<p>
+												<span>Address:</span> 198 West 21th Street, Suite 721 New
+												York NY 10016
+											</p>
+										</div>
+									</div>
+									<div class="dbox w-100 d-flex align-items-center">
+										<div
+											class="icon d-flex align-items-center justify-content-center">
+											<span class="fa fa-phone"></span>
+										</div>
+										<div class="text pl-3">
+											<p>
+												<span>Phone:</span> <a href="tel://+1 346-347-7890">+1 346-347-7890</a>
+											</p>
+										</div>
+									</div>
+									<div class="dbox w-100 d-flex align-items-center">
+										<div
+											class="icon d-flex align-items-center justify-content-center">
+											<span class="fa fa-paper-plane"></span>
+										</div>
+										<div class="text pl-3">
+											<p>
+												<span>Email:</span> <a href="mailto:Info@wintaxconsultant.com">Info@wintaxconsultant.com</a>
+											</p>
+										</div>
+									</div>
+									<div class="dbox w-100 d-flex align-items-center">
+										<div
+											class="icon d-flex align-items-center justify-content-center">
+											<span class="fa fa-globe"></span>
+										</div>
+										<div class="text pl-3">
+											<p>
+												<span>Website</span> <a href="#">wintaxconsultant.com</a>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						<div >
+							<div class="row justify-content-center">
+								<div >
+									<div class="row" style="padding-left: 120px;">
+										<div>
+											<h2 class="footer-heading">Services</h2>
+											<ul >
+												<li><a href="#services-section" class="py-1 d-block">Advance Tax Planning</a></li>
+												<li><a href="#services-section" class="py-1 d-block">Free Estimation and Consultation</a></li>
+												<li><a href="#services-section" class="py-1 d-block">Amendment Tax Return</a></li>
+												<li><a href="#services-section" class="py-1 d-block">ITIN Guidance</a></li>
+												<li><a href="#services-section" class="py-1 d-block">FBAR &amp; FATCA Processing</a></li>
+												<li><a href="#services-section" class="py-1 d-block">Extension Filing</a></li>
+												<li><a href="#services-section" class="py-1 d-block">Tax representation with IRS</a></li>
+												<li><a href="#services-section" class="py-1 d-block">Last 3 years Tax Evaluation (TY2017/ TY2018/TY2019)</a></li>
+												<li><a href="#services-section" class="py-1 d-block">Free Consultation with Tax Expert</a></li>
+												<li><a href="#services-section" class="py-1 d-block">Free Estimation copy within 24 Hours</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row mt-md-5">
+						<div class="col-md-12">
+							<p class="copyright">
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								Copyright &copy;
+								<script>
+									document.write(new Date().getFullYear());
+								</script>
+								All rights reserved | This template is made with <i
+									class="fa fa-heart" aria-hidden="true"></i> by <a
+									href="https://colorlib.com" target="_blank">Colorlib.com</a>
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 py-md-5 py-4 aside-stretch-right pl-lg-5">
+					<h2 class="footer-heading">Free consultation</h2>
+					<form th:action="@{/contactAdminFromHome}" th:object="${contact}"
+						method="post" id="contactForm" class="form-consultation">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Your Name"
+								name="name" id="name" required>
+						</div>
+						<div class="form-group">
+							<input type="email" class="form-control" placeholder="Your Email"
+								name="email" id="email" required>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Contact Number" pattern="^\d{10}$" maxlength="10" 
+								name="contactNumber" id="contactNumber" required>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Subject"
+								name="subject" id="subject" required>
+						</div>
+						<div class="form-group">
+							<textarea name="message" id="message" cols="30" rows="3"
+								class="form-control" placeholder="Message"></textarea>
+						</div>
+						<div class="form-group">
+							<button type="submit" class="form-control submit px-3">Send
+								A Message</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<img src="images/payment.png" alt="Payment" width="250" height="160">
+				</div>
+				<div class="column">
+					<img src="images/paypal.jpg" alt="Paypal" width="250" height="160">
+				</div>
+				<div class="column">
+					<img src="images/irs.png" alt="IRS"  width="250" height="160">
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+
+	<!-- loader -->
+	<div id="ftco-loader" class="show fullscreen">
+		<svg class="circular" width="48px" height="48px">
+			<circle class="path-bg" cx="24" cy="24" r="22" fill="none"
+				stroke-width="4" stroke="#eeeeee" />
+			<circle class="path" cx="24" cy="24" r="22" fill="none"
+				stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg>
+	</div>
+
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.stellar.min.js"></script>
+	<script src="js/jquery.animateNumber.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/scrollax.min.js"></script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+	<script src="js/google-map.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+</html>

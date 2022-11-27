@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Win Tax Filer</title>
+<link rel="icon" href="/images/WinTax.png" type="image/icon type">
+<!-- Font Icon -->
+<link rel="stylesheet"
+	href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+<!-- Main css -->
+<link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+
+	<div class="main">
+
+		<section class="signup">
+			<div class="container">
+				<div class="signup-content">
+					<a class="navbar-brand" th:href="@{/}" style="padding-left: 145px;"> <img
+						src="/images/wtf_final.png" alt="WinTax" width="200" height="80">
+					</a>
+					<p th:if="${errorMessage}" th:utext="${errorMessage}" class="error"></p>
+					<p th:if="${successMessage}" th:utext="${successMessage}"
+						class="success"></p>
+					<form th:action="@{/registerUser}" th:object="${registerForm}" autocomplete="off"
+						method="post" id="signup-form" class="signup-form"
+						oninput='re_password.setCustomValidity(re_password.value != password.value ? "Passwords do not match." : "")'>
+						<h2 class="form-title">Create account</h2>
+						<div class="form-group">
+							<input type="text" class="form-input" name="name" id="name"
+								placeholder="First Name" required />
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-input" name="lastName" id="lastName"
+								placeholder="Last Name" required />
+						</div>
+						<div class="form-group">
+							<input type="email" class="form-input" name="email" id="email"
+								placeholder="Your Email" required />
+						</div>
+						<div class="form-group">
+							<input type="tel" class="form-input" name="mobileNumber"
+								id="mobileNumber" pattern="^\d{10}$" maxlength="10"
+								placeholder="Your Mobile Number" required />
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-input" name="password"
+								id="password" placeholder="Password" required /> <span
+								toggle="#password"
+								class="zmdi zmdi-eye field-icon toggle-password"></span>
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-input" name="re_password"
+								id="re_password" placeholder="Repeat your password" required />
+						</div>
+						<div class="form-group">
+							<input type="checkbox" name="agree-term" id="agree-term"
+								class="agree-term" required /> <label for="agree-term"
+								class="label-agree-term"><span><span></span></span>I
+								agree all statements in <a href="#" class="term-service">Terms
+									of service</a></label>
+						</div>
+						<div class="form-group">
+							<input type="submit" name="submit" id="submit"
+								class="form-submit" value="Create An Account" />
+						</div>
+					</form>
+					<p class="loginhere">
+						Have already an account ? <a th:href="@{/login}"
+							class="loginhere-link">Login here</a>
+					</p>
+				</div>
+			</div>
+		</section>
+
+	</div>
+
+
+	<!-- JS -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/register.js"></script>
+</body>
+</html>

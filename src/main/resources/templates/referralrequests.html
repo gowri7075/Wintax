@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<title>Win Tax Filer</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="icon" href="/images/WinTax.png" type="image/icon type">
+<link
+	href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap"
+	rel="stylesheet">
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="css/animate.css">
+
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/owl.theme.default.min.css">
+<link rel="stylesheet" href="css/magnific-popup.css">
+
+<link rel="stylesheet" href="css/flaticon.css">
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet" type="text/css" href="css/perfect-scrollbar.css">
+<link rel="stylesheet" type="text/css" href="css/util.css">
+<link rel="stylesheet" type="text/css" href="css/css/main.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(document).ready(
+			function() {
+				$("#myInput").on(
+						"keyup",
+						function() {
+							var value = $(this).val().toLowerCase();
+							$("#myTable tr").filter(
+									function() {
+										$(this).toggle(
+												$(this).text().toLowerCase()
+														.indexOf(value) > -1)
+									});
+						});
+			});
+</script>
+</head>
+<body>
+
+	<div class="wrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="bg-wrap">
+						<div class="row">
+							<div class="col-md-6 d-flex align-items-center">
+								<p class="mb-0 phone pl-md-2">
+									<span class="fa fa-phone mr-1"></span><b><a
+										href="tel://+1 346-347-7890">+1 346-347-7890</a></b>
+									&nbsp;&nbsp;&nbsp;<span class="fa fa-paper-plane mr-1"></span>
+									<b><a href="mailto:Info@wintaxconsultant.com">Info@wintaxconsultant.com</a></b>
+								</p>
+
+								<div class="social-media">
+									<p class="mb-0 d-flex">
+										<a href="https://www.facebook.com/"
+											class="d-flex align-items-center justify-content-center"><span
+											class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+										<a href="#"
+											class="d-flex align-items-center justify-content-center"><span
+											class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a> <a
+											href="#"
+											class="d-flex align-items-center justify-content-center"><span
+											class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+										<a href="#"
+											class="d-flex align-items-center justify-content-center"><span
+											class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+									</p>
+								</div>
+							</div>
+							<div class="col-md-6 d-flex justify-content-md-end"
+								style="color: #fff">
+								<ul>
+									<li sec:authorize="isAuthenticated()">Welcome:
+										&nbsp;&nbsp; <span class="fa fa-paper-plane phone mr-2 "
+										sec:authentication="principal.username">User</span>
+									</li>
+								</ul>
+								<a th:href="@{/logout}" class="btn btn-white"
+									style="height: 35px">Logout</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<nav
+		class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
+		id="ftco-navbar">
+		<div class="container">
+			<a class="navbar-brand" th:href="@{/admin}"> <img
+				src="/images/wtf_final.png" alt="WinTax" width="200" height="80">
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#ftco-nav" aria-controls="ftco-nav"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="fa fa-bars"></span> Menu
+			</button>
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav m-auto">
+					<li class="nav-item"><a th:href="@{/usersInfo}"
+						class="nav-link">Home</a></li>
+					<li class="nav-item"><a th:href="@{/contactRequests}"
+						class="nav-link">Contacts</a></li>
+					<li class="nav-item active"><a th:href="@{/referralRequests}"
+						class="nav-link">Referrals</a></li>
+					<li class="nav-item"><a th:href="@{/displayDocuments}"
+						class="nav-link">Documents</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- END nav -->
+	<section class="hero-wrap hero-wrap-3"
+		style="background-image: url('images/bg_2.jpg');"
+		data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row no-gutters slider-text align-items-end">
+				<div class="col-md-9 ftco-animate pb-5">
+					<p class="breadcrumbs mb-2">
+						<span class="mr-2"><a th:href="@{/admin}">Home <i
+								class="ion-ios-arrow-forward"></i></a></span> <span>Referrals <i
+							class="ion-ios-arrow-forward"></i></span>
+					</p>
+					<h1 class="mb-0 bread">Referrals</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="bg-light">
+		<input id="myInput" type="text" placeholder="Search.."
+			style="padding: 12px 20px 12px 40px; margin-bottom: 12px; background-image: url('images/searchicon.png'); background-position: 10px 12px; background-repeat: no-repeat; width: 100%; font-size: 16px;">
+		<div class="limiter">
+			<div class="container-table100">
+				<div class="wrap-table100" style="width: 1300px">
+					<div class="table100 ver1 m-b-110">
+						<div class="table100-head">
+							<table>
+								<thead>
+									<tr class="row100 head">
+										<th class="cell100 referralColumn1" style="font-size: 16px;">#</th>
+										<th class="cell100 referralColumn2" style="font-size: 16px;">Name</th>
+										<th class="cell100 referralColumn3" style="font-size: 16px;">Referral
+											E-Mail</th>
+										<th class="cell100 referralColumn4" style="font-size: 16px;">Referral
+											Name</th>
+										<th class="cell100 referralColumn5" style="font-size: 16px;">Referral
+											Mobile Number</th>
+										<th class="cell100 referralColumn6" style="font-size: 16px;">Message</th>
+										<th class="cell100 referralColumn7" style="font-size: 16px;">Status</th>
+										<th class="cell100 referralColumn8" style="font-size: 16px;">update</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+						<div class="table100-body js-pscroll">
+							<table>
+								<tbody id="myTable">
+									<tr class="row100 body"
+										th:each="refer, istat: ${listReferrals}">
+										<td scope="row" class="cell100 referralColumn1"
+											th:text="${istat.count}" />
+										<td class="cell100 referralColumn2" th:text="${refer.name}"
+											style="font-size: 16px;" />
+										<td class="cell100 referralColumn3"
+											th:text="${refer.referralEmail}" style="font-size: 16px;" />
+										<td class="cell100 referralColumn4"
+											th:text="${refer.referralName}" style="font-size: 16px;" />
+										<td class="cell100 referralColumn5"
+											th:text="${refer.referralMobileNumber}"
+											style="font-size: 16px;" />
+										<td class="cell100 referralColumn6" th:text="${refer.message}"
+											style="font-size: 16px;" />
+										<td class="cell100 referralColumn7" th:text="${refer.status}"
+											style="font-size: 16px;" />
+										<td class="cell100 referralColumn8"><a href="#"
+											target="_blank" class="btn" id="updateReference"
+											data-toggle="modal" data-target="#updateReferenceModal"
+											th:attrappend="data-target=${refer.id}">Update</a>
+											<div class="modal fade" id="updateReferenceModal"
+												tabindex="-1" role="dialog"
+												aria-labelledby="#updateReferenceModalLabel"
+												aria-hidden="true" th:attrappend="id=${refer.id}">
+												<div class="modal-dialog modal-lg" role="document">
+													<div class="modal-content">
+														<div class="modal-body">
+															<div class="row">
+																<form th:action="@{/updateReferAFriendAdmin}"
+																	th:object="${refer}" method="post" id="referForm">
+																	<div class="row">
+																		<div class="col-md-6">
+																			<div class="form-group">
+																				<input type="hidden" name="id"
+																					th:value="${refer.id}" /> <label class="label"
+																					for="name">Full Name</label> <input type="text"
+																					class="form-control"
+																					style="background: #efebfb !important" name="name"
+																					th:value="${refer.name}" id="name"
+																					placeholder="Name" disabled>
+																			</div>
+																		</div>
+																		<div class="col-md-6">
+																			<div class="form-group">
+																				<label class="label" for="email">Email
+																					Address</label> <input type="email" class="form-control"
+																					style="background: #efebfb !important" name="email"
+																					id="email" placeholder="Email"
+																					th:value="${refer.email}" disabled>
+																			</div>
+																		</div>
+																		<div class="col-md-6">
+																			<div class="form-group">
+																				<input type="hidden" name="id"
+																					th:value="${refer.id}" /> <label class="label"
+																					for="name">Referral Full Name</label> <input
+																					type="text" class="form-control"
+																					style="background: #efebfb !important"
+																					name="referralName"
+																					th:value="${refer.referralName}" id="referralName"
+																					placeholder="Name" disabled>
+																			</div>
+																		</div>
+																		<div class="col-md-6">
+																			<div class="form-group">
+																				<label class="label" for="email">Referral
+																					Email Address</label> <input type="email"
+																					class="form-control"
+																					style="background: #efebfb !important"
+																					name="referralEmail" id="referralEmail"
+																					placeholder="Email"
+																					th:value="${refer.referralEmail}" disabled>
+																			</div>
+																		</div>
+																		<div class="col-md-6">
+																			<div class="form-group">
+																				<input type="hidden" name="id"
+																					th:value="${refer.id}" /> <label class="label"
+																					for="name">Mobile Number</label> <input type="tel"
+																					class="form-control"
+																					style="background: #efebfb !important"
+																					name="mobileNumber"
+																					th:value="${refer.mobileNumber}" id="mobileNumber"
+																					placeholder="Name" disabled>
+																			</div>
+																		</div>
+																		<div class="col-md-6">
+																			<div class="form-group">
+																				<label class="label" for="email">Referral
+																					Mobile Number </label> <input type="tel"
+																					class="form-control"
+																					style="background: #efebfb !important"
+																					name="referralMobileNumber"
+																					id="referralMobileNumber" placeholder="Email"
+																					th:value="${refer.referralMobileNumber}" disabled>
+																			</div>
+																		</div>
+																		<div class="col-md-6">
+																			<div class="form-group">
+																				<label class="label" for="email">Responded
+																					Email Address</label> <select name="respondedBy"
+																					style="background: #efebfb !important"
+																					id="respondedBy" class="form-control">
+																					<option disabled>Please select...</option>
+																					<option th:each="adminUser : ${adminUsers}"
+																						th:selected="${adminUser==refer.respondedBy}"
+																						th:value="${adminUser}" th:utext="${adminUser}" />
+																				</select>
+																			</div>
+																		</div>
+																		<div class="col-md-6">
+																			<div class="form-group">
+																				<label class="label" for="status">Status</label> <select
+																					name="status" id="status" class="form-control"
+																					style="background: #efebfb !important">
+																					<option disabled>Please select...</option>
+																					<option th:each="currentStat : ${currentStatus}"
+																						th:selected="${currentStat==refer.status}"
+																						th:value="${currentStat}"
+																						th:utext="${currentStat}" />
+																				</select>
+																			</div>
+																		</div>
+																		<div class="col-md-12">
+																			<div class="form-group">
+																				<label class="label" for="#">Message</label> <input
+																					type="text" name="message" class="form-control"
+																					style="background: #efebfb !important" id="message"
+																					th:value="${refer.message}" placeholder="Message"
+																					disabled>
+																			</div>
+																		</div>
+																		<div class="col-md-12">
+																			<div class="form-group">
+																				<input type="submit" value="Update Status"
+																					class="btn btn-primary">
+																				<div class="submitting"></div>
+																			</div>
+																		</div>
+																	</div>
+																</form>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer">
+		<div class="container-fluid px-lg-5">
+			<div class="row">
+				<div class="col-md-9 py-5">
+					<div class="row">
+						<div class="col-lg-6 col-md-8 d-flex align-items-stretch">
+							<div class="info-wrap bg-primary w-100 p-md-5 p-4">
+								<h3>Let's get in touch</h3>
+								<p class="mb-4">We're open for any suggestion or just to
+									have a chat</p>
+								<div class="dbox w-100 d-flex align-items-start">
+									<div
+										class="icon d-flex align-items-center justify-content-center">
+										<span class="fa fa-map-marker"></span>
+									</div>
+									<div class="text pl-3">
+										<p>
+											<span>Address:</span> 198 West 21th Street, Suite 721 New
+											York NY 10016
+										</p>
+									</div>
+								</div>
+								<div class="dbox w-100 d-flex align-items-center">
+									<div
+										class="icon d-flex align-items-center justify-content-center">
+										<span class="fa fa-phone"></span>
+									</div>
+									<div class="text pl-3">
+										<p>
+											<span>Phone:</span> <a href="tel://+1 346-347-7890">+1
+												346-347-7890</a>
+										</p>
+									</div>
+								</div>
+								<div class="dbox w-100 d-flex align-items-center">
+									<div
+										class="icon d-flex align-items-center justify-content-center">
+										<span class="fa fa-paper-plane"></span>
+									</div>
+									<div class="text pl-3">
+										<p>
+											<span>Email:</span> <a
+												href="mailto:Info@wintaxconsultant.com">Info@wintaxconsultant.com</a>
+										</p>
+									</div>
+								</div>
+								<div class="dbox w-100 d-flex align-items-center">
+									<div
+										class="icon d-flex align-items-center justify-content-center">
+										<span class="fa fa-globe"></span>
+									</div>
+									<div class="text pl-3">
+										<p>
+											<span>Website</span> <a href="#">wintaxconsultant.com</a>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+
+	<!-- loader -->
+	<div id="ftco-loader" class="show fullscreen">
+		<svg class="circular" width="48px" height="48px">
+			<circle class="path-bg" cx="24" cy="24" r="22" fill="none"
+				stroke-width="4" stroke="#eeeeee" />
+			<circle class="path" cx="24" cy="24" r="22" fill="none"
+				stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg>
+	</div>
+
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.stellar.min.js"></script>
+	<script src="js/jquery.animateNumber.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/scrollax.min.js"></script>
+	<script src="js/perfect-scrollbar.min.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+</html>

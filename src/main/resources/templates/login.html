@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Win Tax Filer</title>
+<link rel="icon" href="/images/WinTax.png" type="image/icon type">
+<link
+	href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap"
+	rel="stylesheet">
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="css/animate.css">
+
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/owl.theme.default.min.css">
+<link rel="stylesheet" href="css/magnific-popup.css">
+
+<link rel="stylesheet" href="css/flaticon.css">
+<link rel="stylesheet" href="css/style.css">
+<!-- Font Icon -->
+<link rel="stylesheet"
+	href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+<!-- Main css -->
+<link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+
+	<div class="main">
+
+		<section class="signup">
+			<div class="container">
+
+				<div class="signup-content"
+					style="padding-top: 10px; padding-bottom: 10px;">
+					<a class="navbar-brand" th:href="@{/}" style="padding-left: 130px;">
+						<img src="/images/wtf_final.png" alt="WinTax" width="200"
+						height="80">
+					</a>
+					<div th:if="${errorMessage}">
+						<div class="alert alert-info">
+							<p th:if="${errorMessage}" th:utext="${errorMessage}"
+								class="error"></p>
+						</div>
+					</div>
+					<div th:if="${successMessage}">
+						<div class="alert alert-info">
+							<p th:if="${successMessage}" th:utext="${successMessage}"
+								class="success"></p>
+						</div>
+					</div>
+					<div th:if="${param.logout}">
+						<div class="alert alert-info">You have been logged out.</div>
+					</div>
+					<div th:if="${param.error}">
+						<div class="alert alert-info">User name or password is
+							invalid</div>
+					</div>
+					<form th:action="@{/login}" th:object="${loginForm}" method="post"
+						id="signup-form" class="signup-form" autocomplete="off">
+						<h2 class="form-title">Login</h2>
+						<div class="form-group">
+							<input type="email" class="form-input" name="email" id="email"
+								placeholder="Your Email" />
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-input" name="password"
+								id="password" placeholder="Password" /> <span
+								toggle="#password"
+								class="zmdi zmdi-eye field-icon toggle-password"></span>
+						</div>
+						<div class="form-group">
+							<input type="submit" name="submit" id="submit"
+								class="form-submit" value="Login" />
+						</div>
+					</form>
+					<p class="loginhere">
+						Create an account ? <a th:href="@{/register}"
+							class="loginhere-link">Register here</a>
+					</p>
+					<p class="loginhere">
+						Forgot Password ? <a th:href="@{/forgotpassword}"
+							class="loginhere-link">Forgot Password</a>
+					</p>
+				</div>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- JS -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/register.js"></script>
+</body>
+</html>
