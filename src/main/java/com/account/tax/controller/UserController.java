@@ -111,7 +111,7 @@ public class UserController {
 
 			resetUser.setResetToken(UUID.randomUUID().toString());
 			resetUser = taxService.updateUser(resetUser);
-			String appUrl = "https://wintaxconsultant.com";
+			String appUrl = "https://wintaxfiler.com";
 			modelMap.put("successMessage",
 					"Your Password reset link is mailed to your registered Email: " + resetUser.getEmail());
 

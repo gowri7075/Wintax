@@ -194,7 +194,7 @@ public class TaxServiceImpl implements TaxService{
 	    MimeMessageHelper helper = new MimeMessageHelper(message);
 	    MailSSLSocketFactory socketFactory = new MailSSLSocketFactory();
 	    socketFactory.setTrustAllHosts(true);
-	    helper.setFrom("support@wintaxconsultant.com", "Win Tax");
+	    helper.setFrom("info@wintaxfiler.com", "Win Tax");
 	    helper.setTo(toMail);
 	     
 	    helper.setSubject(subject);
